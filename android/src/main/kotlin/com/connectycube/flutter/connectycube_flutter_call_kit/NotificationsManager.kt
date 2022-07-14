@@ -44,7 +44,10 @@ fun showCallNotification(
 
     )
 
-    var ringtone: Uri
+      val ringtone: Uri = RingtoneManager.getActualDefaultRingtoneUri(
+        context,
+        RingtoneManager.TYPE_RINGTONE
+    )
 
     val customRingtone = getString(context, "ringtone")
     Log.d("NotificationsManager", "customRingtone $customRingtone")
@@ -320,7 +323,7 @@ fun setNotificationColor(context: Context, notificationBuilder: NotificationComp
             if (accentID != 0) {
                 notificationBuilder.color = context.resources.getColor(accentID, null)
             } else {
-                notificationBuilder.color = Color.parseColor("#4CAF50")
+                notificationBuilder.color = Color.parseColor("#ff017e")
             }
         }
     }
